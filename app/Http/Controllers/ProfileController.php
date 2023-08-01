@@ -14,6 +14,17 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+
+        //  $this->middleware('permission:Read Blood', ['only' => ['index']]);
+        //  $this->middleware('permission:Create Blood', ['only' => ['create','store']]);
+        //  $this->middleware('permission:Edit Blood', ['only' => ['edit','update']]);
+        //  $this->middleware('permission:Delete Blood', ['only' => ['destroy']]);
+
+     }
     public function edit(Request $request): View
     {
         return view('profile.edit', [
